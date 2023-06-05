@@ -31,6 +31,22 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 // others
+import TagManager from "react-gtm-module";
+
+//identify if you are on development or production
+//when you build your app process.env.NODE_ENV is set to 'production' 
+const env = process.env.NODE_ENV;
+const tagManagerArgs = {
+  gtmId: "GTM-N96MSVC",
+  //the below changes GTM values based on whether dev or production
+  auth: env === "development"
+    ? "0owGNih82i9cLKizQCwMqA" //dev ga_auth
+    : "wUM4FADN9fNW6CZ_vAFjIQ", //live ga_auth
+  preview: env === "development"
+    ? "env-7" //dev ga_env
+    : "env-1" //live ga_env
+};
+TagManager.initialize(tagManagerArgs);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
