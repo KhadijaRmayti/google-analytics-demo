@@ -30,8 +30,9 @@ import {
   NavLink,
   Nav,
   Container,
-  Button,
 } from "reactstrap";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -156,14 +157,7 @@ function ExamplesNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <Button
-                className="btn-round"
-                color="danger"
-                href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-examples-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-spaceship"></i> Upgrade to Pro
-              </Button>
+              <LanguageSwitcher />
             </NavItem>
           </Nav>
         </Collapse>

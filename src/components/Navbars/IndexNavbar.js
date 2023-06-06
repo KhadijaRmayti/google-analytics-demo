@@ -21,7 +21,6 @@ import React from "react";
 import classnames from "classnames";
 // reactstrap components
 import {
-  Button,
   Collapse,
   NavbarBrand,
   Navbar,
@@ -30,6 +29,8 @@ import {
   Nav,
   Container,
 } from "reactstrap";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -144,14 +145,7 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <Button
-                className="btn-round"
-                color="danger"
-                href="https://www.creative-tim.com/product/paper-kit-pro-react?ref=pkr-index-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-spaceship"></i> Upgrade to Pro
-              </Button>
+              <LanguageSwitcher />
             </NavItem>
           </Nav>
         </Collapse>
