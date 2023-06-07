@@ -17,6 +17,7 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
 // reactstrap components
@@ -31,6 +32,7 @@ import {
 } from "reactstrap";
 
 import LanguageSwitcher from "./LanguageSwitcher";
+import UserLogin from "./UserLogin";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -68,8 +70,7 @@ function IndexNavbar() {
         <div className="navbar-translate">
           <NavbarBrand
             data-placement="bottom"
-            href="/index"
-            target="_blank"
+            to="/index" tag={Link}
             title="Coded by Creative Tim"
           >
             Paper Kit React
@@ -137,12 +138,7 @@ function IndexNavbar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                href="https://demos.creative-tim.com/paper-kit-react/#/documentation?ref=pkr-index-navbar"
-                target="_blank"
-              >
-                <i className="nc-icon nc-book-bookmark" /> Documentation
-              </NavLink>
+              <UserLogin />
             </NavItem>
             <NavItem>
               <LanguageSwitcher />
