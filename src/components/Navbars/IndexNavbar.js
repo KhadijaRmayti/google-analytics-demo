@@ -29,10 +29,12 @@ import {
   NavLink,
   Nav,
   Container,
+  Input
 } from "reactstrap";
 
 import LanguageSwitcher from "./LanguageSwitcher";
 import UserLogin from "./UserLogin";
+import TagManager from "react-gtm-module";
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
@@ -42,6 +44,28 @@ function IndexNavbar() {
     setNavbarCollapse(!navbarCollapse);
     document.documentElement.classList.toggle("nav-open");
   };
+
+  const fontSizes = [
+    {
+      id: "footer.text_size.extra_small",
+      label: "Extra-small"
+    },
+    { id: "footer.text_size.small", label: "Small" },
+    { id: "footer.text_size.default", label: "Default" },
+    { id: "footer.text_size.large", label: "Large" },
+    { id: "footer.text_size.extra_large", label: "Extra Large" }
+  ];
+
+  function fontSizeChanged(e) {
+    const selectedFontSize = (e.target || e.srcElement).value;
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'Font Size Changed',
+        fontSize: selectedFontSize,
+        fontSizeName: fontSizes.find(f => f.id == selectedFontSize).label
+      }
+    })
+  }
 
   React.useEffect(() => {
     const updateNavbarColor = () => {
@@ -136,6 +160,14 @@ function IndexNavbar() {
                 <i className="fa fa-github" />
                 <p className="d-lg-none">GitHub</p>
               </NavLink>
+            </NavItem>
+            <NavItem>
+              <Input name="fontSize" type="select" onChange={fontSizeChanged}>
+                {fontSizes.map(fontSize => (
+
+                  <option key={fontSize.id} value={fontSize.id}>{fontSize.label}</option>
+                ))}
+              </Input>
             </NavItem>
             <NavItem>
               <UserLogin />

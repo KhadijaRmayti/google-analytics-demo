@@ -31,9 +31,14 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import LoginPage from "views/examples/LoginPage";
+import ContactCenterPage from "views/examples/ContactUsPage";
 
 // others
 import TagManager from "react-gtm-module";
+import FAQPage from "views/examples/FAQPage";
+import IneligiblePage from "views/examples/IneligiblePage";
+import ServicesPage from "views/examples/ServicesPage";
+import ServicePage from "views/examples/ServicePage";
 
 //identify if you are on development or production
 //when you build your app process.env.NODE_ENV is set to 'production' 
@@ -49,18 +54,45 @@ const tagManagerArgs = {
     : "env-1" //live ga_env
 };
 TagManager.initialize(tagManagerArgs);
+TagManager.dataLayer({
+  dataLayer: []
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/index" element={<Index />} />
-      <Route path="/nucleo-icons" element={<NucleoIcons />} />
-      <Route path="/landing-page" element={<LandingPage />} />
-      <Route path="/profile-page" element={<ProfilePage />} />
-      <Route path="/register-page" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/">
+        <Route path="index" element={<Index />} />
+        <Route path="nucleo-icons" element={<NucleoIcons />} />
+        <Route path="landing-page" element={<LandingPage />} />
+        <Route path="profile-page" element={<ProfilePage />} />
+        <Route path="register-page" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="contact" element={<ContactCenterPage />} />
+        <Route path="all-faqs" element={<FAQPage />} />
+        <Route path="ineligible" element={<IneligiblePage />} />
+        <Route path="life-events">
+          <Route path="individual">
+            <Route path="Identity-Citizenship-Human-Resources">
+              <Route path="Residency-Entry-Permit">
+                <Route path="RequesttoOpenaSponsorshipFile" element={<ServicePage />} />
+                <Route path="RequesttoIssueaFamilyVisaaCitizenSponsor" element={<ServicePage />} />
+                <Route path="RequesttoChangeStatusofResidency" element={<ServicePage />} />
+                <Route path="RequesttoOpenaSponsorshipFile" element={<ServicePage />} />
+                <Route path="RequesttoIssueaFamilyVisaaResidentSponsorInvestororPartner" element={<ServicePage />} />
+              </Route>
+              <Route path="" element={<ServicesPage />} />
+            </Route>
+            <Route path="HousingProperties" element={<ServicesPage />} />
+            <Route path="DriveTransport" element={<ServicesPage />} />
+            <Route path="Discover-Emirati-Benefits" element={<ServicesPage />} />
+          </Route>
+        </Route>
+        <Route path="searchresults" element={<ServicesPage />} />
+        <Route path="" element={<Navigate to="/index" replace />} />
+      </Route>
       <Route path="*" element={<Navigate to="/index" replace />} />
     </Routes>
   </BrowserRouter>

@@ -19,40 +19,45 @@
 import React from "react";
 
 // reactstrap components
+import {
+  Container,
+  Row
+} from "reactstrap";
 
 // core components
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import IndexNavbar from "components/Navbars/IndexNavbar";
+import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
-
-// index sections
-import SectionLogin from "views/index-sections/SectionLogin.js";
-import SectionExamples from "views/index-sections/SectionExamples.js";
-import SectionServices from "./index-sections/SectionServices";
 import TagManager from "react-gtm-module";
 
-function Index() {
+function IneligiblePage() {
+  document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
     TagManager.dataLayer({
       dataLayer: []
     });
-    document.body.classList.add("index");
+    document.body.classList.add("faqs-page");
     return function cleanup() {
-      document.body.classList.remove("index");
+      document.body.classList.remove("faqs-page");
     };
   });
+
   return (
     <>
       <IndexNavbar />
-      <IndexHeader />
+      <LandingPageHeader />
       <div className="main">
-        <SectionServices />
-        <SectionLogin />
-        <SectionExamples />
-        <DemoFooter />
+        <div className="section text-center">
+          <Container>
+            <Row>
+              You are Ineligible to avail this service
+            </Row>
+          </Container>
+        </div>
       </div>
+      <DemoFooter />
     </>
   );
 }
 
-export default Index;
+export default IneligiblePage;

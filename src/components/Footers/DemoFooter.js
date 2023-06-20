@@ -18,6 +18,7 @@
 */
 /*eslint-disable*/
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import { Row, Container } from "reactstrap";
@@ -39,18 +40,29 @@ function DemoFooter() {
               </li>
               <li>
                 <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
-                  target="_blank"
+                  href="/ineligible"
+                  tag={Link}
+                  title="Request to Open a Sponsorship File"
                 >
-                  Blog
+                  Request to Open a Sponsorship File
                 </a>
               </li>
               <li>
                 <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
-                  target="_blank"
+                  href="/all-faqs"
+                  tag={Link}
+                  title="FAQs"
                 >
-                  Licenses
+                  FAQs
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact"
+                  tag={Link}
+                  title="Contact Center"
+                >
+                  Contact Center
                 </a>
               </li>
             </ul>
