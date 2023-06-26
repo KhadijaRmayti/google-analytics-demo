@@ -45,8 +45,7 @@ function UserLogin() {
     >
       Logout {user.username}
     </Button> :
-    <NavLink to="/login" tag={Link}
-    >
+    <NavLink to="/login" tag={Link}>
       <i className="nc-icon nc-user" /> Login
     </NavLink>
   );

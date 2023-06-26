@@ -28,14 +28,10 @@ import {
 import IndexNavbar from "components/Navbars/IndexNavbar";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
-import TagManager from "react-gtm-module";
 
 function IneligiblePage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    TagManager.dataLayer({
-      dataLayer: []
-    });
     document.body.classList.add("faqs-page");
     return function cleanup() {
       document.body.classList.remove("faqs-page");

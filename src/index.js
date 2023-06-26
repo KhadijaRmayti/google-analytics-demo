@@ -39,6 +39,7 @@ import FAQPage from "views/examples/FAQPage";
 import IneligiblePage from "views/examples/IneligiblePage";
 import ServicesPage from "views/examples/ServicesPage";
 import ServicePage from "views/examples/ServicePage";
+import FeedbackPage from "views/examples/FeedbackPage";
 
 //identify if you are on development or production
 //when you build your app process.env.NODE_ENV is set to 'production' 
@@ -91,6 +92,7 @@ root.render(
           </Route>
         </Route>
         <Route path="searchresults" element={<ServicesPage />} />
+        <Route path="feedback" element={<FeedbackPage />} />
         <Route path="" element={<Navigate to="/index" replace />} />
       </Route>
       <Route path="*" element={<Navigate to="/index" replace />} />

@@ -36,9 +36,6 @@ import TagManager from "react-gtm-module";
 function FAQPage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    TagManager.dataLayer({
-      dataLayer: []
-    });
     document.body.classList.add("faqs-page");
     return function cleanup() {
       document.body.classList.remove("faqs-page");

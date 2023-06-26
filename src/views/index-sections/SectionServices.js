@@ -17,12 +17,14 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
   Container,
   Row,
-  Col
+  Col,
+  NavLink
 } from "reactstrap";
 
 function SectionServices() {
@@ -42,7 +44,7 @@ function SectionServices() {
             <Row>
               <Col md="3">
                 <div className="ant-col ui-lib-grid-col ui-lib-grid-col-0 ui-lib-grid-col ui-lib-story-hompage-link-card-cell ui-lib-grid-col-xs-24 ui-lib-grid-col-sm-24 ui-lib-grid-col-md-8 ui-lib-grid-col-lg-8 ui-lib-grid-col-xl-5">
-                  <a className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" href="/life-events/individual/Identity-Citizenship-Human-Resources">
+                  <NavLink tag={Link} className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" to="/life-events/individual/Identity-Citizenship-Human-Resources">
                     <div className="ui-lib-link-card__content ui-lib-link-card__content_with-icon">
                       <div className="ui-lib-link-card__icon-wrapper">
                         <img className="ui-lib-link-card__icon" src="https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Identity%20Citizenship%20Labour.png" alt="icon" />
@@ -59,12 +61,12 @@ function SectionServices() {
                       </svg>
                     </div>
                     <div className="ui-lib-link-card__border-line"></div>
-                  </a>
+                  </NavLink>
                 </div>
               </Col>
               <Col md="3">
                 <div className="ant-col ui-lib-grid-col ui-lib-grid-col-0 ui-lib-grid-col ui-lib-story-hompage-link-card-cell ui-lib-grid-col-xs-24 ui-lib-grid-col-sm-24 ui-lib-grid-col-md-8 ui-lib-grid-col-lg-8 ui-lib-grid-col-xl-5">
-                  <a className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" href="/life-events/individual/HousingProperties">
+                  <NavLink tag={Link} className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" to="/life-events/individual/HousingProperties">
                     <div className="ui-lib-link-card__content ui-lib-link-card__content_with-icon"><div className="ui-lib-link-card__icon-wrapper">
                       <img className="ui-lib-link-card__icon" src="https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Housing_Properties.png" alt="icon" />
                     </div>
@@ -80,12 +82,12 @@ function SectionServices() {
                       </svg>
                     </div>
                     <div className="ui-lib-link-card__border-line"></div>
-                  </a>
+                  </NavLink>
                 </div>
               </Col>
               <Col md="3">
                 <div className="ant-col ui-lib-grid-col ui-lib-grid-col-0 ui-lib-grid-col ui-lib-story-hompage-link-card-cell ui-lib-grid-col-xs-24 ui-lib-grid-col-sm-24 ui-lib-grid-col-md-8 ui-lib-grid-col-lg-8 ui-lib-grid-col-xl-5">
-                  <a className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" href="/life-events/individual/DriveTransport">
+                  <NavLink tag={Link} className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" to="/life-events/individual/DriveTransport">
                     <div className="ui-lib-link-card__content ui-lib-link-card__content_with-icon">
                       <div className="ui-lib-link-card__icon-wrapper">
                         <img className="ui-lib-link-card__icon" src="https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Drive_Transport.png" alt="icon" />
@@ -102,12 +104,12 @@ function SectionServices() {
                       </svg>
                     </div>
                     <div className="ui-lib-link-card__border-line"></div>
-                  </a>
+                  </NavLink>
                 </div>
               </Col>
               <Col md="3">
                 <div className="ant-col ui-lib-grid-col ui-lib-grid-col-0 ui-lib-grid-col ui-lib-story-hompage-link-card-cell ui-lib-grid-col-xs-24 ui-lib-grid-col-sm-24 ui-lib-grid-col-md-8 ui-lib-grid-col-lg-8 ui-lib-grid-col-xl-5">
-                  <a className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" href="/life-events/individual/Discover-Emirati-Benefits">
+                  <NavLink tag={Link} className="ui-lib-link-card ui-lib-aol_construction-real-estate ui-lib-link-card_enabled ui-lib-link-wrap" target="_self" rel="noopener noreferrer" to="/life-events/individual/Discover-Emirati-Benefits">
                     <div className="ui-lib-link-card__content ui-lib-link-card__content_with-icon"><div className="ui-lib-link-card__icon-wrapper">
                       <img className="ui-lib-link-card__icon" src="https://static.tamm.abudhabi/static-prod/Project/TAMM/AOL%20Mobile%20Icons/Individual/Discover_Emirati_Benefits.png" alt="icon" />
                     </div>
@@ -124,7 +126,7 @@ function SectionServices() {
                     </div>
                     <div className="ui-lib-link-card__border-line">
                     </div>
-                  </a>
+                  </NavLink>
                 </div>
               </Col>
             </Row>

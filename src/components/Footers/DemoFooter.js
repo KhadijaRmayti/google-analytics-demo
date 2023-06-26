@@ -21,7 +21,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // reactstrap components
-import { Row, Container } from "reactstrap";
+import { Row, Container, NavLink } from "reactstrap";
 
 function DemoFooter() {
   return (
@@ -31,39 +31,40 @@ function DemoFooter() {
           <nav className="footer-nav">
             <ul>
               <li>
-                <a
-                  href="https://www.creative-tim.com?ref=pkr-footer"
-                  target="_blank"
+                <NavLink
+                  to="/feedback"
+                  tag={Link}
+                  title="Submit Feedback"
                 >
-                  Creative Tim
-                </a>
+                  Submit Feedback
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/ineligible"
+                <NavLink
+                  to="/ineligible"
                   tag={Link}
                   title="Request to Open a Sponsorship File"
                 >
                   Request to Open a Sponsorship File
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/all-faqs"
+                <NavLink
+                  to="/all-faqs"
                   tag={Link}
                   title="FAQs"
                 >
                   FAQs
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/contact"
+                <NavLink
+                  to="/contact"
                   tag={Link}
                   title="Contact Center"
                 >
                   Contact Center
-                </a>
+                </NavLink>
               </li>
             </ul>
           </nav>

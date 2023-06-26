@@ -17,12 +17,14 @@
 
 */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
   Container,
   Row,
-  Col
+  Col,
+  NavLink
 } from "reactstrap";
 
 // core components
@@ -122,14 +124,14 @@ function ServicesPage() {
                       {services.map(service => (
                         <div key={service.id} className="ui-lib-category-list-item">
                           <div className="ui-lib-category-list-item__content">
-                            <a className="ui-lib-link ui-lib-link_default" target="_self" aria-label={service.name} rel="noopener noreferrer" href={service.link}>
+                            <NavLink tag={Link} className="ui-lib-link ui-lib-link_default" target="_self" aria-label={service.name} rel="noopener noreferrer" to={service.link}>
                               <h4 className="ui-lib-link__heading ui-lib-bold">{service.name}</h4>
-                            </a>
+                            </NavLink>
                             <div className="ui-lib-category-list-item__description">{service.description}</div>
                             <div className="ui-lib-category-list-item__tags">
                               {service.tags.map(tag => (
                                 <div key={tag} tabIndex="0" role="button" className="ui-lib-tag ui-lib-tag_size-default ui-lib-tag_grey ui-lib-tag_hoverable ui-lib-tag_clickable">
-                                  <span className="ui-lib-tag__text">{tag}</span>
+                                  <NavLink to={"/searchresults?q=" + tag} tag={Link}><span className="ui-lib-tag__text">{tag}</span></NavLink>
                                 </div>
                               ))}
                             </div>

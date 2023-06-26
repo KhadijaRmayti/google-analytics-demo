@@ -39,14 +39,10 @@ import {
 import IndexNavbar from "components/Navbars/IndexNavbar";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
-import TagManager from "react-gtm-module";
 
 function ContactCenterPage() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
-    TagManager.dataLayer({
-      dataLayer: []
-    });
     document.body.classList.add("contact-center-page");
     return function cleanup() {
       document.body.classList.remove("contact-center-page");
